@@ -1,37 +1,31 @@
-const http = require('http');
+const express = require('express');
 
-let server = http.createServer((req, res)=>{
-    console.log('METHOD: ' + req.method);
-    console.log('URL: ' + req.url);
+let app = express();
 
-    switch (req.url) {
-        case '/':
-            res.statusCode = 200; // Código de página OK
-            res.setHeader('Content-Type', 'text/html');
-            res.end('<center>Home</center>');
-            break;
-        
-        case '/users':
-            res.statusCode = 200; // Código de página OK
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify({
-                users: [{
-                    name: 'Cristhian',
-                    email: 'cristhian@cristhian.com',
-                    idade: '30',
-                    id: 1
-                }],
-                curso: [{
-                    nomeCurso: 'Engenharia de Computação',
-                    situacao: 'Concluído'
-                }]
-            }));
-            break;
-        default:
-            break;
-    }
+app.get('/', (req, res)=>{
+    res.statusCode = 200; // Código de página OK
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<center>Página Home</center>');
 });
 
-server.listen(3000, '127.0.0.1', ()=>{
+app.get('/users', (req, res)=>{
+    res.statusCode = 200; // Código de página OK
+    res.setHeader('Content-Type', 'application/json');
+    res.json({
+        users: [{
+            name: 'Cristhian',
+            email: 'cristhian@cristhian.com',
+            idade: '30',
+            id: 1
+        }],
+        curso: [{
+            nomeCurso: 'Engenharia de Computação',
+            situacao: 'Concluído'
+        }]
+    });
+});
+
+
+app.listen(3000, '127.0.0.1', ()=>{
     console.log('Servidor Rodando...');
 });
