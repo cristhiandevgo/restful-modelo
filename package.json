@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/cristhiandevgo/restful-modelo#readme",
   "dependencies": {
+    "consign": "^0.1.6",
     "express": "^4.17.2"
   }
 }
