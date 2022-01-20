@@ -1,0 +1,22 @@
+{
+  "name": "restful-modelo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cristhiandevgo/restful-modelo.git"
+  },
+  "author": "Cristhian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cristhiandevgo/restful-modelo/issues"
+  },
+  "homepage": "https://github.com/cristhiandevgo/restful-modelo#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
