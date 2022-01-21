@@ -1,7 +1,7 @@
-module.exports = app=>{
+module.exports = (app)=>{
     app.get('/', (req, res)=>{
-        res.statusCode = 200; // Código de página OK
+        res.statusCode = 200;
         res.setHeader('Content-Type', 'text/html');
-        res.end('<center>Página Home</center>');
+        res.end('<h1>Home</h1>');
     });
 };
