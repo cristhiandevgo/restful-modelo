@@ -57,4 +57,35 @@ module.exports = (app)=>{
             }
         });
     });
+
+    routeId.delete((req, res)=>{
+        db.remove({_id:req.params.id}, {}, err => {
+            if(err){
+                app.utils.error.send(err, req, res);
+            }else{
+                res.status(200).json(req.params);
+            }
+        });
+    });
+
+
+    /*
+    NeDB info
+
+    Nedb.insert
+    Insert a new document
+
+    Nedb.find
+    Find all documents matching the query
+
+    Nedb.update
+    Update all docs matching query v1.7.4 and prior signature.
+
+    Nedb.findOne
+    Find one document matching the query
+
+    Nedb.remove
+    Remove all docs matching the query
+
+    */
 }
